@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome</h1>
+<p>add as many customers you want to add</p>
+
+<h2>employee details</h2>
+<form action="/employee_data/add" method="POST">
+    <fieldset>
+        <label>employee first name :<span><input type="text" name="emp_first_name"></span></label>
+        <label>employee last name :<span><input type="text" name="emp_last_name"></span></label>
+        <label>designation :<span><input type="text" name="designation"></span></label>
+        <label>email : <span><input type="email" name="emp_email"></span></label>
+        <label>salary : <span><input type="text" name="salary"></span></label>
+        <label>Age :<span><input type="text" name="age"></span></label>
+        <label>date of birth <span><input type="date" name="date_birth"></span></label>
+        <label>state: <span><input type="text" name="state"></span></label>
+        <label>district: <span><input type="text" name="district"></span></label>
+        <label>address : <span><textarea name="address" id="address" cols="30" rows="10"></textarea></span></label>
+        <input type="submit" value="submit">
+    </fieldset>
+</form>
+
+<table>
+  <tr>
+    <th>employee's name</th>
+    <th>designation</th>
+    <th>monthly wage</th>
+  </tr>
+  <tr>
+   <% employee_data.forEach(function(user){
+    %>
+    <td><%= user.emp_first_name %><%= user.emp_last_name %></td>
+    <% }) 
+%>
+   <tr>
+   <% employee_data.forEach(function(user){
+    %>
+     <td><%= user.designation %></td> 
+    <% }) 
+%>
+      </tr>
+      <tr>
+       <% employee_data.forEach(function(user){
+    %>
+    <td><%= user.salary %></td>
+    <% }) 
+%>
+   </tr>
+   <tr>
+    <td> 
+    <% employee_data.forEach(function(user){
+    %>  
+     <a href="#" class="deleteuser" data-id="<%= user._id %>">delete</a>
+    <% }) 
+%>
+  </td>
+   </tr>
+</table>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

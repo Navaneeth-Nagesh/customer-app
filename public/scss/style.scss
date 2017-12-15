@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*@font-face {
+ font-family: "Quicksand";
+ src: url("/fonts/OpenSans-light.ttf") format("truetype"),
+        url("/fonts/Quicksand-Light.ttf") format("truetype");
+}*/
+
+.upfold {
+    height: 60vh;
+    background-image: url("../images/home-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    .upfold-content {
+        background-color: white;
+        height: 60vh;
+        width: 40%;
+        margin: 0 auto;
+        display: flex;
+        transform: skewX(20deg);
+        @media only screen and (max-device-width: 480px) {
+            width: 100%;
+            height: 60.5vh;
+            overflow: hidden;
+        }
+        h2 {
+            align-self: center;
+            width: 100%;
+            overflow: hidden;
+            text-align: center;
+            line-height: 55px;
+            transform: skewX(160deg);
+            @media only screen and (max-device-width: 480px) {
+                overflow: hidden;
+            }
+            span {
+                font-size: 35px;
+                background-image: url("../images/home-bg.jpg");
+                text-transform: uppercase;
+                display: block;
+                font-family: 'Josefin Sans', sans-serif;
+                -webkit-text-fill-color: transparent;
+                -webkit-background-clip: text;
+            }
+        }
+    }
+}
+
+section {
+    margin: 50px auto;
+    h2 {
+        text-align: center;
+        font-size: 35px;
+        font-family: 'Quicksand', sans-serif;
+        text-transform: capitalize;
+    }
+}
+
+.features {
+    width: 65%;
+    @media only screen and (max-device-width: 480px) {
+        width: 90%;
+    }
+    .feature-box {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        margin: 100px auto;
+        &:nth-child(odd) {
+            text-align: right;
+            p {
+                text-align: right;
+                float: right;
+            }
+        }
+        .text-box {
+            width: 71%;
+            align-self: center;
+            @media only screen and (max-device-width: 480px) {
+                width: 100%;
+            }
+            &:nth-child(odd) {
+                order: 1;
+            }
+            &:nth-child(even) {
+                order: 2;
+            }
+            h4 {
+                font-size: 25px;
+                text-transform: capitalize;
+                font-family: 'Quicksand', sans-serif;
+                @media only screen and (max-device-width: 480px) {
+                    text-align: center;
+                }
+            }
+            p {
+                width: 75%;
+                font-size: 20px;
+                margin-top: 35px;
+                font-family: 'Quicksand', sans-serif;
+                @media only screen and (max-device-width: 480px) {
+                    width: 100%;
+                }
+                span {
+                    display: block;
+                    padding-top: 10px;
+                    font-weight: 600;
+                }
+            }
+        }
+        .feature-img {
+            width: 250px;
+            height: 250px;
+            @media only screen and (max-device-width: 480px) {
+                display: block;
+                margin: 30px auto;
+            }
+            &:nth-child(odd) {
+                order: 2;
+            }
+            &:nth-child(even) {
+                order: 1;
+            }
+        }
+    }
+}
+
+.testimonials {
+    .carousel-cover {
+        width: 78%;
+        margin: 0 auto;
+        @media only screen and (max-device-width: 480px) {
+            width: 100%;
+        }
+        .carousel-btn {
+            font-size: 80px;
+            position: relative;
+            top: 60px;
+            @media only screen and (max-device-width: 480px) {
+                display: none;
+            }
+            #next {
+                float: right;
+            }
+            #prev {
+                float: left;
+            }
+        }
+        .owl-carousel {
+            margin: 10px auto;
+            width: 60%;
+            position: relative;
+            top: -20px;
+            clear: both;
+            @media only screen and (max-device-width: 480px) {
+                width: 89%;
+                margin: 50px auto;
+            }
+            .owl-nav {
+                display: none;
+                @media only screen and (max-device-width: 480px) {
+                    display: block;
+                }
+            }
+            .test-box {
+                line-height: 25px;
+                p {
+                    font-family: 'Quicksand', sans-serif;
+                    span {
+                        display: block;
+                        text-align: right;
+                        font-family: 'Quicksand', sans-serif;
+                        padding-right: 45px;
+                        text-transform: capitalize;
+                        font-weight: 800;
+                        padding-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

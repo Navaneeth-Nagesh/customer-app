@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/registration.css">
+</head>
+<body>
+   <a href="/" class="back-btn">
+      <span> go back</span>
+      <ul>
+          <li><%# messages('message', locals) %></li>
+      </ul>
+    </a>
+           
+           <h1>register</h1>
+            <form action="/users/register" method="POST">
+            <fieldset>
+                <label>first name :<span><input type="text" name="first_name" required></span></label>
+                <label>last name : <span><input type="text" name="last_name" required></span></label>
+                <label>username : <span><input type="text" name="username" required></span></label>
+                <label>email :<span><input type="email" name="email"></span></label>
+                <label>password :<span><input type="password"  name="password" required></span></label>
+                <label>Confirm password :<span><input type="password" name="password2" required></span></label>
+                <input type="submit" value="submit">
+           </fieldset>
+            </form>
+</body>
+</html>
