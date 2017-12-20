@@ -1,19 +1,19 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .back-btn {
     position: fixed;
-    top: 3vh;
+    top: 1vh;
     left: 2vh;
+    z-index: 10;
     text-decoration: none;
     background-color: black;
     width: 5%;
+    text-align: center;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 15px 15px;
     border: 1px solid black;
     transition: 500ms background-color ease;
+    @media only screen and (max-device-width: 480px) {
+        width: 15%;
+    }
     &:hover {
         background-color: white;
         span {
@@ -25,26 +25,5 @@
         text-transform: capitalize;
         transition: 500ms color ease;
         font-family: 'Quicksand', sans-serif;
-    }
-}
-
-.registration-form {
-    width: 60%;
-    margin: 0 auto;
-    .tab-content {
-        ul {
-            text-align: center;
-            li {
-                display: inline-block;
-                list-style: none;
-                font-size: 20px;
-                cursor: pointer;
-            }
-        }
-    }
-    .sign-form {
-        fieldset {
-            border: none;
-        }
     }
 }

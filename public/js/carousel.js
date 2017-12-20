@@ -21,3 +21,6 @@ $('#prev').click(function () {
     "use strict";
     carouselBtn.trigger('prev.owl.carousel', [300]);
 });
+
+//smooth scroll effect
+

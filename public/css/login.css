@@ -1,0 +1,52 @@
+.head {
+  text-align: center;
+  font-size: 25px;
+  margin: 30px auto;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase; }
+
+.login-form {
+  width: 28%;
+  margin: 40px auto; }
+  @media only screen and (max-device-width: 480px) {
+    .login-form {
+      width: 90%; } }
+  .login-form form {
+    text-align: center; }
+    .login-form form fieldset {
+      border: none; }
+      .login-form form fieldset label {
+        display: block;
+        margin: 20px auto;
+        text-transform: capitalize;
+        font-size: 25px;
+        font-family: 'Quicksand', sans-serif;
+        cursor: pointer; }
+        .login-form form fieldset label span {
+          margin: 0 10px;
+          padding: 0 10px; }
+          .login-form form fieldset label span input {
+            width: 45%;
+            height: 25px;
+            border-top: none;
+            border-left: none;
+            border-right: none; }
+            .login-form form fieldset label span input:focus {
+              outline: none; }
+      .login-form form fieldset input[type=submit] {
+        display: block;
+        margin: 45px auto;
+        border: none;
+        background-color: black;
+        padding: 10px 14px;
+        color: white;
+        width: 29%;
+        font-size: 18px;
+        font-family: 'Quicksand', sans-serif;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 500ms background-color ease; }
+        .login-form form fieldset input[type=submit]:hover {
+          background-color: #b2ea5d; }
+
+/*# sourceMappingURL=login.css.map */

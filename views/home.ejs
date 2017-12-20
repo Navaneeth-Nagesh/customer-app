@@ -1,35 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
+<div class="home-data">
     <h1>welcome</h1>
-<p>add as many customers you want to add</p>
+    <p>add as many employee details as you want to add</p>
+    <h2>employee details</h2>
+    <form action="/employee_data/add" method="POST">
+        <fieldset>
+            <label>employee first name :<span><input type="text" name="emp_first_name"></span></label>
+            <label>employee last name :<span><input type="text" name="emp_last_name"></span></label>
+            <label>designation :<span><input type="text" name="desination"></span></label>
+            <label>email : <span><input type="email" name="emp_email"></span></label><br>
+            <label>contact number : <span><input type="text" name="contact_number"></span></label>
+            <label>annual income : <span><input type="text" name="salary"></span></label><br>
+            <label>Age :<span><input type="text" name="age"></span></label>
+            <label>date of birth : <span><input type="date" name="date_birth"></span></label><br>
+            <label>state : <span><input type="text" name="state"></span></label>
+            <label>district : <span><input type="text" name="district"></span></label><br>
+            <label>address : <span><textarea name="address" id="address" cols="70" rows="15"></textarea></span></label>
+            <input type="submit" value="submit">
+        </fieldset>
+    </form>
+</div>
 
-<h2>employee details</h2>
-<form action="/employee_data/add" method="POST">
-    <fieldset>
-        <label>employee first name :<span><input type="text" name="emp_first_name"></span></label>
-        <label>employee last name :<span><input type="text" name="emp_last_name"></span></label>
-        <label>designation :<span><input type="text" name="designation"></span></label>
-        <label>email : <span><input type="email" name="emp_email"></span></label>
-        <label>salary : <span><input type="text" name="salary"></span></label>
-        <label>Age :<span><input type="text" name="age"></span></label>
-        <label>date of birth <span><input type="date" name="date_birth"></span></label>
-        <label>state: <span><input type="text" name="state"></span></label>
-        <label>district: <span><input type="text" name="district"></span></label>
-        <label>address : <span><textarea name="address" id="address" cols="30" rows="10"></textarea></span></label>
-        <input type="submit" value="submit">
-    </fieldset>
-</form>
-
-<table>
+    <!--<table>
   <tr>
     <th>employee's name</th>
     <th>designation</th>
     <th>monthly wage</th>
+    <th>delete</th>
   </tr>
   <tr>
    <% employee_data.forEach(function(user){
@@ -37,21 +33,16 @@
     <td><%= user.emp_first_name %><%= user.emp_last_name %></td>
     <% }) 
 %>
-   <tr>
    <% employee_data.forEach(function(user){
     %>
-     <td><%= user.designation %></td> 
+     <td><%= user.desination %></td> 
     <% }) 
 %>
-      </tr>
-      <tr>
        <% employee_data.forEach(function(user){
     %>
     <td><%= user.salary %></td>
     <% }) 
 %>
-   </tr>
-   <tr>
     <td> 
     <% employee_data.forEach(function(user){
     %>  
@@ -59,9 +50,64 @@
     <% }) 
 %>
   </td>
-   </tr>
-</table>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="script.js"></script>
-</body>
-</html>
+</table>-->
+    <div class="table">
+        <ul class="table-header">
+            <li><span>Employee's name</span>
+                <ul class="data">
+                    <% employee_data.forEach(function(user){ %>
+                        <li>
+                            <%= user.emp_first_name %>&nbsp;&nbsp;
+                                <%= user.emp_last_name%>
+                                    <% }) %>
+                        </li>
+                </ul>
+            </li>
+            <li><span>designation</span>
+                <ul class="data">
+                    <% employee_data.forEach(function(user){ %>
+                        <li>
+                            <%= user.desination %>
+                                <% }) %>
+                        </li>
+                </ul>
+            </li>
+            <li><span>email</span>
+                <ul class="data">
+                    <% employee_data.forEach(function(user){ %>
+                        <li>
+                            <%= user.emp_email %>
+                                <% }) %>
+                        </li>
+                </ul>
+            </li>
+            <li><span>annual income</span>
+                <ul class="data">
+                    <% employee_data.forEach(function(user){ %>
+                        <li>
+                            <%= user.salary %>
+                                <% }) %>
+                        </li>
+                </ul>
+            </li>
+            <li><span>contact number</span>
+                <ul class="data">
+                    <% employee_data.forEach(function(user){ %>
+                        <li>
+                            <%= user.contact_number %>
+                                <% }) %>
+                        </li>
+                </ul>
+            </li>
+            <li><span>delete data</span>
+                <ul class="data">
+                    <% employee_data.forEach(function(user){%>
+                        <li><a href="#" class="deleteuser" data-id="<%= user._id %>">delete</a>
+                            <% }) 
+                    %>
+                        </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    

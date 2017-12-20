@@ -1,26 +1,20 @@
-$title-color: #e12e74;
+$title-color: black;
 $light-blue-color: #999;
-$pink-color: black;
+$pink-color: #e0dddd;
 $blue-color: #333;
 $orange-color: #1a3b60;
-* {
-    margin: 0;
-    padding: 0;
-}
-::-webkit-scrollbar {
-    display: none;
-}
-body{
+.body {
     overflow-x: hidden;
 }
-header {
+
+.header {
     margin: 40px auto;
     width: 50%;
     border-top: 4px solid $title-color;
     border-bottom: 4px solid $title-color;
     @media only screen and (max-device-width: 480px) {
-            width: 100%;
-        }
+        width: 100%;
+    }
     .title {
         text-align: center;
         font-size: 48px;
@@ -38,15 +32,15 @@ header {
             font-size: 30px;
             color: $title-color;
             @media only screen and (max-device-width: 480px) {
-            font-size: 20px;
-        }
+                font-size: 20px;
+            }
         }
         span {
             display: block;
             font-size: 52px;
             @media only screen and (max-device-width: 480px) {
-            font-size: 30px;
-        }
+                font-size: 30px;
+            }
         }
     }
 }
@@ -60,9 +54,9 @@ header {
     border-bottom: 250px solid transparent;
     border-right: 250px solid transparent;
     float: right;
-     @media only screen and (max-device-width: 480px) {
-            display: none;
-        }
+    @media only screen and (max-device-width: 480px) {
+        display: none;
+    }
     .square {
         width: 80px;
         height: 80px;
@@ -159,8 +153,8 @@ header {
     float: left;
     top: -100px;
     @media only screen and (max-device-width: 480px) {
-            display: none;
-        }
+        display: none;
+    }
     .square {
         width: 80px;
         height: 80px;
@@ -239,10 +233,10 @@ header {
             width: 150px;
             height: 150px;
             transform: rotate(-45deg);
-            &:nth-child(odd){
+            &:nth-child(odd) {
                 background-color: $pink-color;
             }
-            &:nth-child(even){
+            &:nth-child(even) {
                 background-color: $orange-color;
             }
             &:after {
@@ -263,7 +257,7 @@ header {
             }
         }
         .sq2 {
-            top: 18.4%;
+            top: 26.7%;
             &:after {
                 height: 225px;
                 top: -180px;
@@ -272,27 +266,21 @@ header {
             }
         }
         .sq3 {
-            top: 30.4%;
+            top: 47%;
             &:after {
                 background-color: $pink-color;
             }
         }
         .sq4 {
-            top: 42.5%;
+            top: 67.2%;
             &:after {
                 background-color: $orange-color;
             }
         }
         .sq5 {
-            top: 54.6%;
+            top: 87.4%;
             &:after {
                 background-color: $pink-color;
-            }
-        }
-        .sq6 {
-            top: 66.7%;
-            &:after {
-                background-color: $orange-color;
             }
         }
     }
@@ -306,10 +294,10 @@ header {
             width: 150px;
             height: 150px;
             transform: rotate(-45deg);
-            &:nth-child(odd){
+            &:nth-child(odd) {
                 background-color: $blue-color;
             }
-            &:nth-child(even){
+            &:nth-child(even) {
                 background-color: $light-blue-color;
             }
             &:after {
@@ -324,37 +312,25 @@ header {
             }
         }
         .sq1 {
-            top: 11.3%;
-            &:after{
+            top: 17.3%;
+            &:after {
                 background-color: $blue-color;
             }
         }
         .sq2 {
-            top: 24.3%;
+            top: 39%;
             &:after {
                 background-color: $light-blue-color;
             }
         }
         .sq3 {
-            top: 37.3%;
+            top: 60.5%;
             &:after {
                 background-color: $blue-color;
             }
         }
         .sq4 {
-            top: 50.3%;
-            &:after {
-                background-color: $light-blue-color;
-            }
-        }
-        .sq5 {
-            top: 63.3%;
-            &:after {
-                background-color: $blue-color;
-            }
-        }
-        .sq6 {
-            top: 76.3%;
+            top: 82.3%;
             &:after {
                 background-color: $light-blue-color;
             }
@@ -364,7 +340,6 @@ header {
         clear: both;
         width: 50%;
         margin: 30px auto;
-        
         @media only screen and (max-device-width: 480px) {
             width: 80%;
             font-size: 20px;
@@ -374,23 +349,26 @@ header {
             text-align: right;
         }
         h3 {
-            font-size: 30px;
             margin: 20px auto;
+            a {
+                font-size: 35px;
+                text-decoration: none;
+                color: black;
+                font-family: 'Josefin Sans', sans-serif;
+                img {
+                    width: 20%;
+                    height: 20%;
+                    @media only screen and (max-device-width: 480px) {
+                        width: 30%;
+                    }
+                }
+            }
+        }
+        h5 {
+            font-size: 22px;
+            font-family: 'Quicksand', sans-serif;
+            padding: 20px;
             text-transform: capitalize;
-            font-family: sans-serif;
-            cursor: pointer;
-        }
-        .pink {
-            color: $pink-color;
-        }
-        .blue {
-            color: $blue-color;
-        }
-        .orange {
-            color: $orange-color;
-        }
-        .light-blue {
-            color: $light-blue-color;
         }
         p {
             font-family: sans-serif;

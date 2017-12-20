@@ -1,4 +1,4 @@
-nav {
+#nav {
     display: flex;
     height: 14vh;
     width: 100%;
@@ -39,8 +39,8 @@ nav {
             align-self: center;
             list-style: none;
             margin: 10px;
-            &:hover{
-                a{
+            &:hover {
+                a {
                     color: #007877;
                 }
             }

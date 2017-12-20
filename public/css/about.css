@@ -1,22 +1,15 @@
-* {
-  margin: 0;
-  padding: 0; }
-
-::-webkit-scrollbar {
-  display: none; }
-
-body {
+.body {
   overflow-x: hidden; }
 
-header {
+.header {
   margin: 40px auto;
   width: 50%;
-  border-top: 4px solid #e12e74;
-  border-bottom: 4px solid #e12e74; }
+  border-top: 4px solid black;
+  border-bottom: 4px solid black; }
   @media only screen and (max-device-width: 480px) {
-    header {
+    .header {
       width: 100%; } }
-  header .title {
+  .header .title {
     text-align: center;
     font-size: 48px;
     font-family: 'Cairo', sans-serif;
@@ -26,20 +19,20 @@ header {
     letter-spacing: 3px;
     padding-bottom: 20px; }
     @media only screen and (max-device-width: 480px) {
-      header .title {
+      .header .title {
         font-size: 25px;
         line-height: 45px; } }
-    header .title .colored {
+    .header .title .colored {
       font-size: 30px;
-      color: #e12e74; }
+      color: black; }
       @media only screen and (max-device-width: 480px) {
-        header .title .colored {
+        .header .title .colored {
           font-size: 20px; } }
-    header .title span {
+    .header .title span {
       display: block;
       font-size: 52px; }
       @media only screen and (max-device-width: 480px) {
-        header .title span {
+        .header .title span {
           font-size: 30px; } }
 
 .triangle-right {
@@ -95,7 +88,7 @@ header {
     top: 151px;
     left: 207px; }
   .triangle-right .sq8 {
-    background-color: black;
+    background-color: #e0dddd;
     top: -40px;
     left: 142px; }
   .triangle-right .sq9 {
@@ -115,11 +108,11 @@ header {
     top: -226px;
     left: 77px; }
   .triangle-right .sq13 {
-    background-color: black;
+    background-color: #e0dddd;
     top: -287px;
     left: 139px; }
   .triangle-right .sq14 {
-    background-color: black;
+    background-color: #e0dddd;
     top: 213px;
     left: 143px; }
 
@@ -148,7 +141,7 @@ header {
       left: 19px;
       transform: rotate(-45deg); }
   .triangle-left .sq1 {
-    background-color: black;
+    background-color: #e0dddd;
     top: 0;
     right: 56px; }
   .triangle-left .sq2 {
@@ -176,7 +169,7 @@ header {
     top: -102px;
     right: 79px; }
   .triangle-left .sq8 {
-    background-color: black;
+    background-color: #e0dddd;
     top: 25px;
     right: 211px; }
   .triangle-left .sq9 {
@@ -201,7 +194,7 @@ header {
       height: 150px;
       transform: rotate(-45deg); }
       .article-container .square-left .square:nth-child(odd) {
-        background-color: black; }
+        background-color: #e0dddd; }
       .article-container .square-left .square:nth-child(even) {
         background-color: #1a3b60; }
       .article-container .square-left .square:after {
@@ -216,30 +209,26 @@ header {
     .article-container .square-left .sq1 {
       top: 6%; }
       .article-container .square-left .sq1:after {
-        background-color: black; }
+        background-color: #e0dddd; }
     .article-container .square-left .sq2 {
-      top: 18.4%; }
+      top: 26.7%; }
       .article-container .square-left .sq2:after {
         height: 225px;
         top: -180px;
         right: -70px;
         background-color: #1a3b60; }
     .article-container .square-left .sq3 {
-      top: 30.4%; }
+      top: 47%; }
       .article-container .square-left .sq3:after {
-        background-color: black; }
+        background-color: #e0dddd; }
     .article-container .square-left .sq4 {
-      top: 42.5%; }
+      top: 67.2%; }
       .article-container .square-left .sq4:after {
         background-color: #1a3b60; }
     .article-container .square-left .sq5 {
-      top: 54.6%; }
+      top: 87.4%; }
       .article-container .square-left .sq5:after {
-        background-color: black; }
-    .article-container .square-left .sq6 {
-      top: 66.7%; }
-      .article-container .square-left .sq6:after {
-        background-color: #1a3b60; }
+        background-color: #e0dddd; }
   .article-container .square-right {
     float: right; }
     @media only screen and (max-device-width: 480px) {
@@ -264,28 +253,20 @@ header {
         transform: rotate(-135deg);
         display: block; }
     .article-container .square-right .sq1 {
-      top: 11.3%; }
+      top: 17.3%; }
       .article-container .square-right .sq1:after {
         background-color: #333; }
     .article-container .square-right .sq2 {
-      top: 24.3%; }
+      top: 39%; }
       .article-container .square-right .sq2:after {
         background-color: #999; }
     .article-container .square-right .sq3 {
-      top: 37.3%; }
+      top: 60.5%; }
       .article-container .square-right .sq3:after {
         background-color: #333; }
     .article-container .square-right .sq4 {
-      top: 50.3%; }
+      top: 82.3%; }
       .article-container .square-right .sq4:after {
-        background-color: #999; }
-    .article-container .square-right .sq5 {
-      top: 63.3%; }
-      .article-container .square-right .sq5:after {
-        background-color: #333; }
-    .article-container .square-right .sq6 {
-      top: 76.3%; }
-      .article-container .square-right .sq6:after {
         background-color: #999; }
   .article-container .article {
     clear: both;
@@ -299,19 +280,23 @@ header {
     .article-container .article:nth-child(even) {
       text-align: right; }
     .article-container .article h3 {
-      font-size: 30px;
-      margin: 20px auto;
-      text-transform: capitalize;
-      font-family: sans-serif;
-      cursor: pointer; }
-    .article-container .article .pink {
-      color: black; }
-    .article-container .article .blue {
-      color: #333; }
-    .article-container .article .orange {
-      color: #1a3b60; }
-    .article-container .article .light-blue {
-      color: #999; }
+      margin: 20px auto; }
+      .article-container .article h3 a {
+        font-size: 35px;
+        text-decoration: none;
+        color: black;
+        font-family: 'Josefin Sans', sans-serif; }
+        .article-container .article h3 a img {
+          width: 20%;
+          height: 20%; }
+          @media only screen and (max-device-width: 480px) {
+            .article-container .article h3 a img {
+              width: 30%; } }
+    .article-container .article h5 {
+      font-size: 22px;
+      font-family: 'Quicksand', sans-serif;
+      padding: 20px;
+      text-transform: capitalize; }
     .article-container .article p {
       font-family: sans-serif;
       line-height: 25px; }

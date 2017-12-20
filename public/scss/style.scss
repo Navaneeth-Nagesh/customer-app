@@ -1,3 +1,11 @@
+@import 'header.scss';
+@import 'register.scss';
+@import 'login.scss';
+@import 'about.scss';
+@import 'back-btn.scss';
+@import 'home.scss';
+@import 'message.css';
+@import 'footer.scss';
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +15,36 @@
     display: none;
 }
 
+
 /*@font-face {
  font-family: "Quicksand";
  src: url("/fonts/OpenSans-light.ttf") format("truetype"),
         url("/fonts/Quicksand-Light.ttf") format("truetype");
 }*/
+
+.scroll-up {
+    position: fixed;
+    right: 6vw;
+    bottom: 10vh;
+    display: block;
+    background-color: black;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    z-index: 15;
+    .fa {
+        color: white;
+        position: relative;
+        top: 13px;
+        font-size: 20px;
+        left: 14px;
+    }
+}
+
+.scroll_hidden {
+    display: none;
+}
 
 .upfold {
     height: 60vh;
@@ -146,6 +179,7 @@ section {
             font-size: 80px;
             position: relative;
             top: 60px;
+            cursor: pointer;
             @media only screen and (max-device-width: 480px) {
                 display: none;
             }

@@ -25,6 +25,9 @@ footer {
             position: absolute;
             height: 40vh;
             transform: rotate(-15deg);
+            @media only screen and (max-device-width: 480px) {
+                height: 42vh;
+            }
         }
         &:after {
             content: '';

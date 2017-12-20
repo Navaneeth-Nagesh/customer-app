@@ -1,22 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/logo.png">
-    <title><%= title %></title>
+    <link rel="shortcut icon" href="/images/logo.png">
+    <title>
+        <%= title %>
+    </title>
     <!-- styling sheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="OwlCarousel-plugins/owl.carousel.min.css">
-    <link rel="stylesheet" href="OwlCarousel-plugins/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/OwlCarousel-plugins/owl.carousel.min.css">
+    <link rel="stylesheet" href="/OwlCarousel-plugins/owl.theme.default.min.css">
 </head>
+
 <body>
-    <% block content %>
-    
+    <nav id="nav">
+        <a class="logo-container" href="/">
+            <h1>
+                <img src="/images/logo.png" alt="logo" class="logo">
+            </h1>
+        </a>
+        <ul>
+            <li><a href="/about">about us</a></li>
+            <% if (!user) { %>
+                <li><a href="/users/login">login</a></li>
+                <li class="highlight"><a href="/users/register">sign up</a>
+                </li><% }
+                    else { %>
+                    <li class="highlight"><a href="/users/logout">logout</a></li>
+                    <% }  %>
+        </ul>
+    </nav>
+    <%- messages('message', locals) %>  
+    <%- body %>
+        <footer>
+            <div class="social-container">
+                <h3>Contact us</h3>
+                <ul>
+                    <a rel="noreferrer noopener" href="https://github.com/Navaneeth-Nagesh" target="_blank">
+                        <li><i class="fa fa-github" aria-hidden="true"></i></li>
+                    </a>
+                    <a rel="noreferrer noopener" href="https://www.facebook.com/navaneeth.nagesh" target="_blank">
+                        <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                    </a>
+                    <a rel="noreferrer noopener" href="https://www.instagram.com/navaneeth_nagesh/" target="_blank">
+                        <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                    </a>
+                </ul>
+                <span class="optional">or</span>
+                <address>
+                <a href="mailto:navaneethnagesh56@gmail.com">Mail to: Navaneethnagesh56@gmail.com</a>
+                </address>
+                <p><small>copyright &copy; 2018</small></p>
+            </div>
+        </footer>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="/OwlCarousel-plugins/owl.carousel.min.js"></script>
+        <script src="/js/script.js" type="text/javascript"></script>
+        <script src="/js/carousel.js" type="text/javascript"></script>
 </body>
+
 </html>

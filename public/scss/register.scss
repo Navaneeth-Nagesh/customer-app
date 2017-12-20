@@ -1,0 +1,64 @@
+.registration {
+    width: 60%;
+    margin: 0 auto;
+    @media only screen and (max-device-width: 480px) {
+        width: 90%;
+        margin: 0 auto;
+    }
+    h1 {
+        text-align: center;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 30px;
+        text-transform: capitalize;
+    }
+    form {
+        width: 90%;
+        margin: 60px auto;
+        @media only screen and (max-device-width: 480px) {
+            width: 100%;
+            margin: 30px auto;
+        }
+        fieldset {
+            border: none;
+            label {
+                font-size: 20px;
+                text-transform: capitalize;
+                font-family: 'Quicksand', sans-serif;
+                span {
+                    padding: 0 15px;
+                    input {
+                        width: 25%;
+                        height: 25px;
+                        margin: 20px auto;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        @media only screen and (max-device-width: 480px) {
+                            width: 100%;
+                        }
+                        &:focus{
+                            outline: none;
+                        }
+                    }
+                }
+            }
+            input[type=submit] {
+                display: block;
+                margin: 45px auto;
+                border: none;
+                background-color: black;
+                padding: 10px 14px;
+                color: white;
+                width: 29%;
+                font-size: 18px;
+                font-family: 'Quicksand', sans-serif;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: 500ms background-color ease;
+                &:hover {
+                    background-color: #b2ea5d;
+                }
+            }
+        }
+    }
+}
