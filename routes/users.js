@@ -28,14 +28,16 @@ router.post('/register', function (req, res) {
     req.checkBody('email', 'Email is not valid').isEmail();
     req.checkBody('username', 'Username is required').notEmpty();
     req.checkBody('password', 'Password is required').notEmpty();
+    req.checkBody('password2', 'Confirm password is required').notEmpty();
     req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
 
     let errors = req.validationErrors();
 
     if (errors) {
         res.render('register', {
+            title: 'customerapp',
             errors: errors
-        });
+       });
     } else {
         let newUser = new User({
             first_name: first_name,
@@ -56,7 +58,7 @@ router.post('/register', function (req, res) {
                         console.log(err);
                         return;
                     } else {
-                        req.flash('success', 'You are now registered and can log in');
+                        req.flash('success', 'You are now registered and you can log in');
                         res.redirect('/users/login');
                     }
                 });
@@ -73,10 +75,10 @@ router.get('/login', function (req, res) {
     });
 });
 
-// LoginProcess
+// Login Process
 router.post('/login', function (req, res, next) {
     passport.authenticate('local', {
-        successRedirect: '/',
+        successRedirect: '/home',
         failureRedirect: '/users/login',
         failureFlash: true
     })(req, res, next);

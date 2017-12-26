@@ -1,16 +1,16 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
-const expressLayouts = require('express-ejs-layouts');
-const mongojs = require('mongojs');
-const db = mongojs('customerapp', ['employee_data']);
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const mongojs = require('mongojs');
+const expressLayouts = require('express-ejs-layouts');
 const expressValidator = require('express-validator');
+const db = mongojs('customerapp', ['employee_data']);
 const flash = require('connect-flash');
 const session = require('express-session');
+const passport = require('passport');
 const config = require('./config/database');
 const router = express.Router();
-const passport = require('passport');
 var ObjectId = mongojs.ObjectId;
 
 mongoose.connect(config.database);
@@ -45,6 +45,13 @@ mon_db.on('error', function (err) {
     console.log(err);
 });
 
+// Express session middleware
+app.use(session({
+    secret: 'yoursecret',
+    resave: true,
+    saveUninitialized: true
+}));
+
 
 // Express Messages Middleware
 app.use(require('connect-flash')());
@@ -78,18 +85,11 @@ require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
+//global initialization of user
 app.get('*', function (req, res, next) {
     res.locals.user = req.user || null;
     next();
 });
-
-
-// Express session middleware
-app.use(session({
-    secret: 'keyboard cat',
-    resave: true,
-    saveUninitialized: true
-}));
 
 // Access Control
 function ensureAuthenticated(req, res, next) {
@@ -114,7 +114,7 @@ app.get('/about', function (req, res) {
     });
 });
 
-app.get('/home',function (req, res) {
+app.get('/home', ensureAuthenticated, function (req, res) {
     db.employee_data.find(function (err, docs) {
         res.render('home', {
             title: 'customerapp',
@@ -127,7 +127,7 @@ app.get('/home',function (req, res) {
 
 //employee data
 
-app.post('/employee_data/add',function (req, res) {
+app.post('/employee_data/add', function (req, res) {
     var newuser = {
         emp_first_name: req.body.emp_first_name,
         emp_last_name: req.body.emp_last_name,
@@ -147,11 +147,12 @@ app.post('/employee_data/add',function (req, res) {
             console.log(err);
         }
         res.redirect('/home');
+        req.flash('success', 'Employee data added to the table.');
     })
     console.log(newuser);
 });
 
-app.delete('/employee_data/delete/:id',function (req, res) {
+app.delete('/employee_data/delete/:id', function (req, res) {
     console.log(req.params.id);
     db.employee_data.remove({
         _id: ObjectId(req.params.id)
@@ -170,6 +171,6 @@ app.use('/users', users);
 
 // running server at port 3000..
 
-app.listen(3000, '0.0.0.0', function() {
+app.listen(3000, '0.0.0.0', function () {
     console.log('Listening to port:  ' + 3000);
 });

@@ -9,7 +9,7 @@
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 30px;
-    text-transform: capitalize; }
+    text-transform: uppercase; }
   .registration form {
     width: 90%;
     margin: 60px auto; }

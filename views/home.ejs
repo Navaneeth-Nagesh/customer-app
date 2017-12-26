@@ -1,15 +1,15 @@
 <div class="home-data">
-    <h1>welcome</h1>
+    <h1>welcome, <span><%= user.username %></span></h1>
     <p>add as many employee details as you want to add</p>
     <h2>employee details</h2>
     <form action="/employee_data/add" method="POST">
         <fieldset>
-            <label>employee first name :<span><input type="text" name="emp_first_name"></span></label>
-            <label>employee last name :<span><input type="text" name="emp_last_name"></span></label>
-            <label>designation :<span><input type="text" name="desination"></span></label>
-            <label>email : <span><input type="email" name="emp_email"></span></label><br>
-            <label>contact number : <span><input type="text" name="contact_number"></span></label>
-            <label>annual income : <span><input type="text" name="salary"></span></label><br>
+            <label>employee first name :<span><input type="text" name="emp_first_name" required></span></label>
+            <label>employee last name :<span><input type="text" name="emp_last_name" required></span></label>
+            <label>designation :<span><input type="text" name="desination" required></span></label>
+            <label>email : <span><input type="email" name="emp_email" required></span></label><br>
+            <label>contact number : <span><input type="text" name="contact_number" required></span></label>
+            <label>annual income : <span><input type="text" name="salary" required></span></label><br>
             <label>Age :<span><input type="text" name="age"></span></label>
             <label>date of birth : <span><input type="date" name="date_birth"></span></label><br>
             <label>state : <span><input type="text" name="state"></span></label>
