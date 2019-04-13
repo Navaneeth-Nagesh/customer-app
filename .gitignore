@@ -1,0 +1,10 @@
+**/.sass-cache/
+*.map
+.idea/
+.vscode/
+.project/
+information/
+*.zip
+node_modules/
+.project/
+.eslintrc.json
