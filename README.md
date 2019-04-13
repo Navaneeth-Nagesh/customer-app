@@ -10,3 +10,5 @@ npm install
 ```
 node app.js
 ```
+
+###### Happy Coding! :)
