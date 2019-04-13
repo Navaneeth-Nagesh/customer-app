@@ -6,5 +6,6 @@
 information/
 *.zip
 node_modules/
+package-lock.json
 .project/
 .eslintrc.json
